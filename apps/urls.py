@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import AppsListView
+from api.views import AppsListView, CreateAPIKeyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('apps/', AppsListView.as_view(), name='apps'),
+    path('api-key/', CreateAPIKeyView.as_view(), name='create-api-key')
 ]
