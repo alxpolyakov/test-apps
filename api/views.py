@@ -22,6 +22,6 @@ class CreateAPIKeyView(APIView):
 
     def put(self, request, format=None):
         ctx = {
-            'token': ApiKey.objects.create(owner=request.user)
+            'key': ApiKey.objects.create(owner=request.user).key
         }
         return Response(ctx)
